@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function~slayer</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Inclusive+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+    <body>
+        <div class="headline">
+            <h1>Function~slayer</h1>
+        </div>
+        <div class="svg-container">
+            <!-- viewBox="0 0 y x" -->
+            <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" id="coordinate_system">
+                <marker id="arrow" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse" markerUnits="strokeWidth" viewBox="0 0 5 5">
+                    <path d="M0,0 L5,2.5 L0,5" fill="black" />
+                </marker>
+            </svg>
+        </div>
+        <div class="leftGUI"><!---------------------------------------------------------------------------------------------------------------------------->
+            <div class="level-display">
+                <p id="level-text"></p>
+            </div>
+            <div class="infoInput-container">
+                <div class="info-container">
+                    <p id="info-text">Gib eine Funktion ein, um den Graphen zu zeichnen.</p>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="function-input" placeholder="f(x) = . . .">
+                    <button id="generate-button" onclick="drawAgainOnClick()">zeichnen</button>
+                </div>
+            </div>
+            <!----------------------------------------------------------------------------------------------------------------------------->
+            <div class="graphLenghtButton-container">
+                <div class="text-container">
+                    <p id="textForGraphLenght">Soll der Graph vollständig gezeichnet werden?</p>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="graphLenghtButton" onclick="toggleOnOff()">
+                    <label for="graphLenghtButton"></label>
+                </div>
+            </div>
+            <!----------------------------------------------------------------------------------------------------------------------------->
+            <div class="coordinateInfo-container">
+                <div class="playerCoordinateInfo-container">
+                    <p id="textForPlayerCoordinates">Spielerkoordinaten:</p>
+                </div>
+                <div class="targetCoordinateInfo-container">
+                    <p id="textForTargetCoordinates">Zielkoordinaten:</p>
+                </div>
+            </div>
+            <!----------------------------------------------------------------------------------------------------------------------------->
+            <div class="level-container">
+                <ul id="level-list">
+
+                </ul>
+            </div>
+            <!----------------------------------------------------------------------------------------------------------------------------->
+            <div class="help-container">
+                <button id="help-button" onclick="helpButtonClick()"> <span class="material-symbols-outlined icon">help</span> </button>
+                <div id="help-text-container-1" style="width: 0; opacity: 0; transition: width 0.4s ease-out, opacity 0.4s ease-out;">
+                    <p id="help-text-1"></p>
+                </div>
+                <div id="help-text-container-2-placeholder" style="width: 0; opacity: 0; transition: width 0s, opacity 0.6s ease-out; overflow: hidden;">
+                    <p id="help-text-2-solution">Lösung:</p>
+                </div>
+                <div id="help-text-container-2" style="width: 0; overflow: hidden;">
+                    <p id="help-text-2" class="censored"></p>
+                </div>
+            </div>
+        </div><!------------------------------------------------------------------------------------------------------------------------------------------->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.4.0/math.min.js"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
